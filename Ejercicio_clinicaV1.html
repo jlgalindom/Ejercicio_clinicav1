@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salud Vital - Consultorio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+  <header class="bg-green-600 text-white p-6 shadow-md">
+    <h1 class="text-3xl font-bold text-center">Salud Vital - Consultorio Médico</h1>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6">
+    <!-- Información Institucional -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Sobre Nosotros</h2>
+      <p>
+        En <strong>Salud Vital</strong> nos especializamos en brindar atención primaria y especializada a nuestros pacientes con calidez humana y profesionalismo.
+      </p>
+    </section>
+
+    <!-- Especialidades Médicas -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Especialidades</h2>
+      <ul class="list-none space-y-2">
+        <li class="flex items-center"><i class="ph ph-stethoscope text-green-600 mr-2"></i><strong>Medicina General:</strong> Diagnóstico y tratamiento inicial.</li>
+        <li class="flex items-center"><i class="ph ph-baby text-green-600 mr-2"></i><strong>Pediatría:</strong> Atención integral a niños y adolescentes.</li>
+        <li class="flex items-center"><i class="ph ph-gender-female text-green-600 mr-2"></i><strong>Ginecología:</strong> Salud femenina y controles regulares.</li>
+        <li class="flex items-center"><i class="ph ph-apple-logo text-green-600 mr-2"></i><strong>Nutrición:</strong> Planes personalizados para una vida saludable.</li>
+      </ul>
+    </section>
+
+    <!-- Agenda por Especialidad -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Agenda por Especialidad</h2>
+      <div class="grid gap-4">
+        <div class="bg-white shadow p-4 rounded">
+          <h3 class="text-xl font-bold mb-2"><i class="ph ph-stethoscope text-green-600 mr-2"></i>Medicina General</h3>
+          <p>Horario disponible: Lunes a Viernes, 08:00 - 14:00</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded">
+          <h3 class="text-xl font-bold mb-2"><i class="ph ph-baby text-green-600 mr-2"></i>Pediatría</h3>
+          <p>Horario disponible: Martes y Jueves, 09:00 - 13:00</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded">
+          <h3 class="text-xl font-bold mb-2"><i class="ph ph-gender-female text-green-600 mr-2"></i>Ginecología</h3>
+          <p>Horario disponible: Miércoles y Viernes, 10:00 - 15:00</p>
+        </div>
+        <div class="bg-white shadow p-4 rounded">
+          <h3 class="text-xl font-bold mb-2"><i class="ph ph-apple-logo text-green-600 mr-2"></i>Nutrición</h3>
+          <p>Horario disponible: Lunes, Miércoles y Viernes, 11:00 - 16:00</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de Cita -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4 border-b pb-2">Agendar Cita</h2>
+      <form class="grid gap-4" id="appointmentForm">
+        <input class="p-2 rounded border" type="text" name="nombre" placeholder="Nombre completo" required />
+        <input class="p-2 rounded border" type="number" name="edad" placeholder="Edad" required />
+        <select class="p-2 rounded border" name="sexo" required>
+          <option value="">Sexo</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <input class="p-2 rounded border" type="text" name="sangre" placeholder="Tipo de sangre" required />
+        <input class="p-2 rounded border" type="text" name="ocupacion" placeholder="Ocupación" />
+        <input class="p-2 rounded border" type="text" name="estado_civil" placeholder="Estado civil" />
+        <input class="p-2 rounded border" type="tel" name="telefono" placeholder="Número de contacto" required />
+        <input class="p-2 rounded border" type="email" name="email" placeholder="Correo electrónico" required />
+        <input class="p-2 rounded border" type="text" name="motivo" placeholder="Motivo de la cita" required />
+        <input class="p-2 rounded border" type="text" name="enfermedad" placeholder="Tipo de enfermedad (si aplica)" />
+        <select class="p-2 rounded border" name="urgencia" required>
+          <option value="">Nivel de urgencia</option>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+        <input class="p-2 rounded border" type="date" name="fecha" required />
+        <input class="p-2 rounded border" type="time" name="hora" required />
+        <select class="p-2 rounded border" name="tipo_cita" required>
+          <option value="">Tipo de cita</option>
+          <option value="General">Consulta General</option>
+          <option value="Especialidad">Especialidad</option>
+          <option value="Otro">Otro</option>
+        </select>
+        <button type="submit" class="bg-green-600 text-white p-2 rounded hover:bg-green-700">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="bg-green-600 text-white p-4 text-center mt-10">
+    &copy; 2025 Salud Vital. Todos los derechos reservados.
+  </footer>
+
+  <!-- Script para enviar a Google Sheets -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec'; // Reemplaza con tu URL
+    const form = document.getElementById('appointmentForm');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, {
+        method: 'POST',
+        body: new FormData(form)
+      })
+      .then(response => {
+        alert("Cita registrada con éxito.");
+        form.reset();
+      })
+      .catch(error => alert("Error al enviar. Intente de nuevo."));
+    });
+  </script>
+</body>
+
+</html>
